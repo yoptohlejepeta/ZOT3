@@ -1,0 +1,48 @@
+import marimo
+
+__generated_with = "0.19.10"
+app = marimo.App(width="full")
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    import marimo as mo
+
+    return (mo,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # Zpracování a analýza obrazu
+    """)
+    return
+
+
+@app.cell
+def _():
+    for i in range(10):
+        print(i)
+    return
+
+
+@app.cell
+def _(mo):
+    input = mo.ui.text(label="Zadejte číslo: ")
+    input
+    return (input,)
+
+
+@app.cell
+def _(input, mo):
+    mo.md(f"Zadal jste číslo: {input.value}")
+    return
+
+
+if __name__ == "__main__":
+    app.run()
