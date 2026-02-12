@@ -1,5 +1,5 @@
 serve:
-	python -m http.server --directory .
+	python -m http.server --directory docs
 
 export:
 		for file in notebooks/*; \
