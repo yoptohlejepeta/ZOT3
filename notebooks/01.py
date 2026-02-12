@@ -6,14 +6,10 @@ app = marimo.App(width="full")
 
 @app.cell
 def _():
-    return
-
-
-@app.cell
-def _():
     import marimo as mo
+    import skimage.data as data
 
-    return (mo,)
+    return data, mo
 
 
 @app.cell(hide_code=True)
@@ -40,7 +36,15 @@ def _(mo):
 
 @app.cell
 def _(input, mo):
-    mo.md(f"Zadal jste číslo: {input.value}")
+    mo.md(f"""
+    Zadal jste číslo: {input.value}
+    """)
+    return
+
+
+@app.cell
+def _(data, mo):
+    mo.image(data.astronaut())
     return
 
 
